@@ -17,9 +17,9 @@ export class CardFormComponent implements OnInit {
 
   users: any[] = []
   user: FormGroup = this.forBuilder.group({
-    nom: ['', Validators.required],
-    prenom: ['', Validators.required], 
-    email: ['', Validators.required],
+    nom: ['', [Validators.required, Validators.minLength(2)]],
+    prenom: ['', [Validators.required, Validators.minLength(2)]], 
+    email: ['', [Validators.required, Validators.email]],
     entreprise: ['', Validators.required],
     telephone: ['', Validators.required]
   })
